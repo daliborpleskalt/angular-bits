@@ -1,0 +1,9 @@
+<div class="<%= fileName %>">
+  <h2 class="<%= fileName %>__title"><%= className %></h2>
+  <div class="<%= fileName %>__content">
+    <!-- Topic content here -->
+  </div>
+  <div class="<%= fileName %>__demo">
+    <!-- Demo implementation here -->
+  </div>
+</div> 

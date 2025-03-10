@@ -1,0 +1,13 @@
+{
+  "name": "@angular-bits/schematics",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./index.cjs",
+  "types": "./index.d.ts",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^19.2.1",
+    "@angular-devkit/schematics": "^19.2.1"
+  }
+}

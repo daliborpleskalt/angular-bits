@@ -1,0 +1,141 @@
+@use '../../../../../shared/design-tokens/src/_tokens' as tokens;
+@use '@nebular/theme/styles/theming' as *;
+@use '@nebular/theme/styles/themes/default' as default;
+
+// Create a custom theme using our design tokens
+$nb-themes: nb-register-theme((
+  // Colors
+  color-primary-100: tokens.color('primary'),
+  color-primary-200: tokens.color('primary'),
+  color-primary-300: tokens.color('primary'),
+  color-primary-400: tokens.color('primary'),
+  color-primary-500: tokens.color('primary'),
+  color-primary-600: tokens.color('primary'),
+  color-primary-700: tokens.color('primary'),
+  color-primary-800: tokens.color('primary'),
+  color-primary-900: tokens.color('primary'),
+  
+  color-success-100: tokens.color('success'),
+  color-success-200: tokens.color('success'),
+  color-success-300: tokens.color('success'),
+  color-success-400: tokens.color('success'),
+  color-success-500: tokens.color('success'),
+  color-success-600: tokens.color('success'),
+  color-success-700: tokens.color('success'),
+  color-success-800: tokens.color('success'),
+  color-success-900: tokens.color('success'),
+  
+  color-info-100: tokens.color('info'),
+  color-info-200: tokens.color('info'),
+  color-info-300: tokens.color('info'),
+  color-info-400: tokens.color('info'),
+  color-info-500: tokens.color('info'),
+  color-info-600: tokens.color('info'),
+  color-info-700: tokens.color('info'),
+  color-info-800: tokens.color('info'),
+  color-info-900: tokens.color('info'),
+  
+  color-warning-100: tokens.color('warning'),
+  color-warning-200: tokens.color('warning'),
+  color-warning-300: tokens.color('warning'),
+  color-warning-400: tokens.color('warning'),
+  color-warning-500: tokens.color('warning'),
+  color-warning-600: tokens.color('warning'),
+  color-warning-700: tokens.color('warning'),
+  color-warning-800: tokens.color('warning'),
+  color-warning-900: tokens.color('warning'),
+  
+  color-danger-100: tokens.color('danger'),
+  color-danger-200: tokens.color('danger'),
+  color-danger-300: tokens.color('danger'),
+  color-danger-400: tokens.color('danger'),
+  color-danger-500: tokens.color('danger'),
+  color-danger-600: tokens.color('danger'),
+  color-danger-700: tokens.color('danger'),
+  color-danger-800: tokens.color('danger'),
+  color-danger-900: tokens.color('danger'),
+  
+  color-basic-100: tokens.color('basic', '100'),
+  color-basic-200: tokens.color('basic', '200'),
+  color-basic-300: tokens.color('basic', '300'),
+  color-basic-400: tokens.color('basic', '400'),
+  color-basic-500: tokens.color('basic', '500'),
+  color-basic-600: tokens.color('basic', '600'),
+  color-basic-700: tokens.color('basic', '700'),
+  color-basic-800: tokens.color('basic', '800'),
+  color-basic-900: tokens.color('basic', '900'),
+  color-basic-1000: tokens.color('basic', '1000'),
+  color-basic-1100: tokens.color('basic', '1100'),
+  
+  // Text colors
+  text-basic-color: tokens.color('text', 'primary'),
+  text-alternate-color: tokens.color('text', 'secondary'),
+  text-control-color: tokens.color('basic', '100'),
+  text-disabled-color: tokens.color('text', 'disabled'),
+  text-hint-color: tokens.color('text', 'hint'),
+  
+  // Fonts
+  font-family-primary: tokens.$font-family-primary,
+  font-family-secondary: tokens.$font-family-secondary,
+  
+  // Font sizes
+  text-heading-1-font-size: tokens.$font-size-xxl,
+  text-heading-2-font-size: tokens.$font-size-xl,
+  text-heading-3-font-size: tokens.$font-size-lg,
+  text-heading-4-font-size: tokens.$font-size-md,
+  text-heading-5-font-size: tokens.$font-size-sm,
+  text-heading-6-font-size: tokens.$font-size-xs,
+  
+  text-paragraph-font-size: tokens.$font-size-md,
+  text-paragraph-line-height: tokens.$font-lineHeight-md,
+  
+  text-subtitle-font-size: tokens.$font-size-sm,
+  text-subtitle-line-height: tokens.$font-lineHeight-sm,
+  
+  text-caption-font-size: tokens.$font-size-xs,
+  text-caption-line-height: tokens.$font-lineHeight-xs,
+  
+  text-button-font-size: tokens.$font-size-sm,
+  text-button-line-height: tokens.$font-lineHeight-sm,
+  
+  // Spacing
+  padding: tokens.spacing('md'),
+  margin: tokens.spacing('md'),
+  
+  // Borders
+  border-radius: tokens.$radius-md,
+  
+  // Shadows
+  shadow: tokens.$shadow-md,
+  
+  // Transitions
+  button-text-transform: none,
+  button-filled-basic-focus-border-color: tokens.color('primary'),
+  
+  // Card
+  card-border-radius: tokens.$radius-lg,
+  card-padding: tokens.spacing('lg'),
+  card-shadow: tokens.$shadow-md,
+  
+  // Sidebar
+  sidebar-padding: tokens.spacing('md'),
+  sidebar-width: 16rem,
+  sidebar-shadow: tokens.$shadow-lg,
+  
+  // Layout
+  layout-padding: tokens.spacing('md'),
+  layout-medium-padding: tokens.spacing('md'),
+  layout-small-padding: tokens.spacing('sm'),
+  
+  // Header
+  header-height: 4rem,
+  header-padding: tokens.spacing('md'),
+  
+  // Footer
+  footer-height: 3rem,
+  footer-padding: tokens.spacing('md'),
+  
+  // Animations
+  animation-duration: tokens.$animation-duration-normal,
+  animation-easing: tokens.$animation-timing-easeInOut,
+), angular-bits, default); 

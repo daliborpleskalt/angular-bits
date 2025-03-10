@@ -1,0 +1,20 @@
+{
+  "budgets": [
+    {
+      "type": "initial",
+      "maximumWarning": "150kb",
+      "maximumError": "200kb"
+    },
+    {
+      "type": "anyComponentStyle",
+      "maximumWarning": "20kb",
+      "maximumError": "30kb"
+    },
+    {
+      "type": "bundle",
+      "name": "main",
+      "maximumWarning": "100kb",
+      "maximumError": "150kb"
+    }
+  ]
+} 

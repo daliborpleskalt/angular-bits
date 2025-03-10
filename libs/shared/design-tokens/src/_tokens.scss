@@ -1,0 +1,132 @@
+// Auto-generated from tokens.json. Do not edit directly.
+
+// Import SASS map module
+@use "sass:map";
+
+$color-primary: #3366FF;
+$color-success: #00D68F;
+$color-info: #0095FF;
+$color-warning: #FFAA00;
+$color-danger: #FF3D71;
+$color-basic-100: #FFFFFF;
+$color-basic-200: #F7F9FC;
+$color-basic-300: #EDF1F7;
+$color-basic-400: #E4E9F2;
+$color-basic-500: #C5CEE0;
+$color-basic-600: #8F9BB3;
+$color-basic-700: #2E3A59;
+$color-basic-800: #222B45;
+$color-basic-900: #1A2138;
+$color-basic-1000: #151A30;
+$color-basic-1100: #101426;
+$text-primary: #222B45;
+$text-secondary: #8F9BB3;
+$text-hint: #A6AEBD;
+$text-disabled: #C5CEE0;
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 8px;
+$radius-xl: 12px;
+$shadow-sm: 0 2px 4px 0 rgba(0,0,0,0.08);
+$shadow-md: 0 4px 8px 0 rgba(0,0,0,0.12);
+$shadow-lg: 0 8px 16px 0 rgba(0,0,0,0.16);
+$font-family-primary: Open Sans, sans-serif;
+$font-family-secondary: Roboto, sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-lineHeight-xs: 16px;
+$font-lineHeight-sm: 20px;
+$font-lineHeight-md: 24px;
+$font-lineHeight-lg: 28px;
+$font-lineHeight-xl: 32px;
+$font-lineHeight-xxl: 40px;
+$animation-duration-fast: 0.15s;
+$animation-duration-normal: 0.3s;
+$animation-duration-slow: 0.5s;
+$animation-timing-ease: ease;
+$animation-timing-easeIn: ease-in;
+$animation-timing-easeOut: ease-out;
+$animation-timing-easeInOut: ease-in-out;
+$animation-timing-linear: linear;
+$breakpoints-xs: 576px;
+$breakpoints-sm: 768px;
+$breakpoints-md: 992px;
+$breakpoints-lg: 1200px;
+$breakpoints-xl: 1600px;
+
+// Maps for programmatic access
+$color-map: (
+  "primary": $color-primary,
+  "success": $color-success,
+  "info": $color-info,
+  "warning": $color-warning,
+  "danger": $color-danger,
+  "basic": (
+    "100": $color-basic-100,
+    "200": $color-basic-200,
+    "300": $color-basic-300,
+    "400": $color-basic-400,
+    "500": $color-basic-500,
+    "600": $color-basic-600,
+    "700": $color-basic-700,
+    "800": $color-basic-800,
+    "900": $color-basic-900,
+    "1000": $color-basic-1000,
+    "1100": $color-basic-1100,
+  ),
+  "text": (
+    "primary": $text-primary,
+    "secondary": $text-secondary,
+    "hint": $text-hint,
+    "disabled": $text-disabled
+  )
+);
+
+$spacing-map: (
+  "xs": $spacing-xs,
+  "sm": $spacing-sm,
+  "md": $spacing-md,
+  "lg": $spacing-lg,
+  "xl": $spacing-xl,
+  "xxl": $spacing-xxl,
+);
+
+$breakpoints-map: (
+  "xs": $breakpoints-xs,
+  "sm": $breakpoints-sm,
+  "md": $breakpoints-md,
+  "lg": $breakpoints-lg,
+  "xl": $breakpoints-xl,
+);
+
+// Utility functions
+@function color($key, $shade: null) {
+  @if $shade {
+    @return map.get(map.get($color-map, $key), $shade);
+  } @else {
+    @return map.get($color-map, $key);
+  }
+}
+
+@function spacing($key) {
+  @return map.get($spacing-map, $key);
+}
+
+@function breakpoint($key) {
+  @return map.get($breakpoints-map, $key);
+}

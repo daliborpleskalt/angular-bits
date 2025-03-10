@@ -1,0 +1,13 @@
+name: Example Validation
+on: [pull_request]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+      - run: npm ci
+      - run: nx affected:test --parallel=4
+      - run: nx run-many --target=lint --all
+      - run: nx run showcase:cy:run

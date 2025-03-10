@@ -5,7 +5,17 @@ export default [
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
   {
-    ignores: ['**/dist'],
+    ignores: [
+      '**/dist',
+      '.cursorrules',
+      'node_modules',
+      'tmp',
+      '.nx',
+      '.git',
+      '.vscode',
+      '.github',
+      '.DS_Store'
+    ],
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],

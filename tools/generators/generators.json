@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "generators",
+  "version": "0.0.1",
+  "generators": {
+    "topic": {
+      "factory": "./src/lib/topic/generator",
+      "schema": "./src/lib/topic/schema.json",
+      "description": "Generate a new topic"
+    }
+  }
+} 

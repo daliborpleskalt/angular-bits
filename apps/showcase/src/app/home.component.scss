@@ -1,0 +1,26 @@
+.home {
+  display: block;
+  min-height: 100vh;
+  padding: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    color: #6b7280;
+  }
+
+  &__main {
+    position: relative;
+    min-height: 400px;
+  }
+} 

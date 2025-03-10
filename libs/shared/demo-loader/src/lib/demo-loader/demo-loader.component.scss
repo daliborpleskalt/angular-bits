@@ -1,0 +1,32 @@
+.demo-loader {
+  display: block;
+  
+  &__container {
+    min-height: 200px;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    color: #6b7280;
+  }
+
+  &__error {
+    color: #dc2626;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: #fee2e2;
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    // Styles for the demo content container
+    position: relative;
+    min-height: 200px;
+  }
+} 

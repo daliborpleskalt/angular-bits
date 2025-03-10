@@ -1,0 +1,149 @@
+// ANGULAR EDUCATIONAL MONOREPO CURSOR RULES
+// Last updated: 2025-03-10
+// Applies to: All files in monorepo
+
+### CORE PRINCIPLES ###
+1. Prioritize educational clarity over code brevity
+2. Maintain strict Nx module boundaries via tags
+3. Enforce example isolation patterns
+4. Link code to markdown documentation
+5. Use standalone components for demos
+6. Follow Angular API evolution roadmap
+7. Use SCSS for all styling needs
+8. Follow BEM methodology strictly
+9. Use Nebular UI components exclusively
+
+### DEPENDENCY MANAGEMENT ###
+1. NEVER use --legacy-peer-deps flag
+2. Resolve dependency conflicts properly
+3. Keep dependencies at compatible versions
+4. Document breaking changes in dependencies
+5. Use exact versions for critical dependencies
+6. Maintain peerDependencies in sync
+7. Use @nebular/* packages for UI components
+
+### ARCHITECTURAL RULES ###
+# Module Boundaries
+- Import only through public API paths (index.ts exports)
+- Features may only import from shared/core
+- Apps may only import from features/shared
+- No cross-feature dependencies
+
+# Example Isolation
+- No relative parent imports (../) in demo components
+- Shared utilities must reside in libs/shared/core
+- Max 15 dependencies per example
+- Bundle size <100KB per demo component
+
+### CODING CONVENTIONS ###
+// Components
+- Use standalone: true declaration
+- Prefer signals over RxJS where possible
+- Avoid ngModel in forms
+- Include @Example metadata header
+- Use SCSS for component styles
+- Follow BEM methodology for SCSS
+- Keep component styles scoped
+- Use Nebular components and themes
+- Generate new topics using @angular-bits/generators:topic
+
+// BEM Naming Rules
+- Block: Meaningful component name (e.g., 'demo-loader')
+- Element: Double underscore prefix (e.g., 'demo-loader__header')
+- Modifier: Double dash prefix (e.g., 'demo-loader__button--disabled')
+- No more than 2 levels of nesting
+- Use semantic naming over presentational
+- Keep class names in kebab-case
+
+// Services
+- Provide in root unless explicitly scoped
+- Implement destroy$ pattern
+- Add @LogOperation decorator
+- Include lifecycle hooks for educational purposes
+
+// Documentation
+- Link examples using [Example:directive-patterns]
+- Use {{example:di-container}} syntax in markdown
+- Maintain 1:1 parity between docs and code
+- Document Nebular component usage
+
+// Styling
+- Use SCSS for all stylesheets
+- Maintain global SCSS variables in shared/ui
+- Follow BEM naming convention strictly:
+  * Block: Component name
+  * Element: Block__element
+  * Modifier: Block__element--modifier
+- Use mixins for reusable styles
+- Keep component styles modular
+- Avoid global styles in components
+- Use semantic class names
+- Maximum nesting depth of 3 levels
+- Separate modifiers with double hyphens
+- Group related elements together
+- Use Nebular theme variables
+
+### TESTING STANDARDS ###
+// Unit Tests
+- Follow Arrange-Act-Assert pattern
+- Use Angular Testing Library
+- Test IDs via data-testid attributes
+- Test Nebular component integration
+
+// E2E Tests
+- Use Cypress Component Testing
+- Implement visual regression checks
+- Add accessibility audits via axe-core
+
+### EDUCATIONAL GUIDELINES ###
+Each example must include:
+1. Problem statement section
+2. Before/after code comparison
+3. Common mistakes subsection  
+4. Interactive quiz component
+5. Performance impact analysis
+6. Nebular component usage examples
+
+Avoid in examples:
+- Complex RxJS operator chains
+- Monolithic components
+- Direct DOM manipulation
+- Circular dependencies
+- Global styles
+- Inline styles
+- Non-Nebular UI components
+
+### MAINTENANCE RULES ###
+1. Use compatibility layer for Angular upgrades
+2. Document deprecations for 2 release cycles
+3. Create migration schematics for examples
+4. Polyfills only through shared/compatibility
+5. Keep Nebular packages in sync
+
+### SECURITY PROTOCOLS ###
+- Sanitize all demo app inputs
+- Disable eval in example runner
+- Content Security Policy Level 2
+- Third-party examples in sandbox iframe
+
+### VISUALIZATION REQUIREMENTS ###
+- Implement virtual scrolling via @angular/cdk
+- Add performance metrics dashboard
+- Include dependency graph visualization
+- Create change detection flow animator
+- Use Nebular data visualization components
+
+### TOPIC GENERATION ###
+// Always use the official generator for new topics:
+nx generate @angular-bits/generators:topic --name=your-topic-name --category=component
+
+// Available categories:
+- component
+- directive
+- service
+- pipe
+
+// AUTOMATION COMMANDS
+@schematics: nx generate @angular-edu/schematics:educational-example
+@build: nx affected:build --parallel=4
+@test: nx run-many --target=test --all

@@ -1,0 +1,38 @@
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { <%= className %>Component } from '../<%= fileName %>.component';
+
+@Component({
+  selector: 'lib-<%= fileName %>-demo',
+  standalone: true,
+  imports: [CommonModule, <%= className %>Component],
+  template: `
+    <div class="<%= fileName %>-demo">
+      <h2 class="<%= fileName %>-demo__title">Demo: <%= className %></h2>
+      <div class="<%= fileName %>-demo__content">
+        <lib-<%= fileName %>></lib-<%= fileName %>>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .<%= fileName %>-demo {
+      display: block;
+      padding: 1rem;
+
+      &__title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      &__content {
+        border: 1px solid #eee;
+        padding: 1rem;
+        border-radius: 4px;
+      }
+    }
+  `],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class <%= className %>DemoComponent {
+  // Demo component implementation
+} 

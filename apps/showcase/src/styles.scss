@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use '@nebular/theme/styles/theming' as *;
+@use '@nebular/theme/styles/themes/default';
+@use '@nebular/theme/styles/globals' as *;
+
+// Import our custom theme
+@use '../../../libs/shared/ui/src/lib/theme/_nebular-theme' as theme;
+
+// Import design tokens
+@use '../../../libs/shared/design-tokens/src/_tokens' as tokens;
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+
+// Custom styles following BEM methodology
+.showcase {
+  &__container {
+    padding: tokens.spacing('md');
+  }
+
+  &__header {
+    margin-bottom: tokens.spacing('lg');
+  }
+
+  &__content {
+    min-height: 100vh;
+  }
+}
+
+// Global styles (keep minimal)
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: tokens.$font-family-primary;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@angular-bits/testing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "./index.cjs",
+  "types": "./index.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-browser-dynamic": "^17.0.0",
+    "@angular/common": "^17.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/node": "^20.10.5"
+  },
+  "keywords": [
+    "angular",
+    "testing",
+    "education",
+    "bem",
+    "utilities"
+  ],
+  "author": "Angular Bits Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/angular-bits"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/angular-bits/issues"
+  }
+}
