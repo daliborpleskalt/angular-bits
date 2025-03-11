@@ -1,4 +1,4 @@
-name: Example Validation
+name: Pull Request Validation
 on: [pull_request]
 
 jobs:
@@ -8,6 +8,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Fetch all branches
+        run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+          git branch -a
       - uses: actions/setup-node@v3
         with:
           node-version: '22'
@@ -16,8 +20,8 @@ jobs:
         run: npm ci
       - name: Install Nx globally
         run: npm install -g nx
-      - name: Run affected tests
-        run: npx nx affected:test --parallel=4
+      - name: Run all tests
+        run: npx nx run-many --target=test --all --parallel=4
       - name: Run linting
         run: npx nx run-many --target=lint --all
       - name: Run Cypress tests
