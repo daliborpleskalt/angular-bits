@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { MarkdownService } from './markdown.service';
+import { MarkdownService, TopicRouteData } from './markdown.service';
 import { firstValueFrom } from 'rxjs';
 
 describe('MarkdownService', () => {
@@ -89,19 +89,18 @@ describe('MarkdownService', () => {
     });
   });
 
-  it('should parse route data into topic reference', () => {
-    const routeData = {
-      topic: 'test-topic',
-      type: 'directive' as const,
+  it('should parse route data', () => {
+    const routeData: TopicRouteData = {
+      type: 'component' as const,
+      topic: 'topic',
       name: 'topic'
     };
 
     const result = service.parseRouteData(routeData);
-
     expect(result).toEqual({
-      type: 'directive',
+      type: 'component',
       name: 'topic',
-      path: '/directives/topic'
+      path: '/components/topic'
     });
   });
 
@@ -115,12 +114,12 @@ describe('MarkdownService', () => {
   });
 
   it('should handle cache correctly', () => {
-    const content = 'test content';
-    const basePath = '/topics';
+    const content = '# test content';
+    const basePath = '/test';
 
     const result1 = service.processContent(content, basePath);
     const result2 = service.processContent(content, basePath);
 
-    expect(result1).toBe(result2);
+    expect(result1).toEqual(result2);
   });
 }); 

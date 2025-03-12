@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "projects": {
+    "compatibility": "libs/shared/compatibility",
+    "core": "libs/shared/core",
+    "demo-loader": "libs/demo-loader",
+    "generators": "tools/generators",
+    "schematics": "tools/schematics",
+    "showcase": "apps/showcase",
+    "topics": "libs/topics",
+    "ui": "libs/shared/ui"
+  }
+} 

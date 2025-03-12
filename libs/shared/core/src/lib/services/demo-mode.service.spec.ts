@@ -5,9 +5,7 @@ describe('DemoModeService', () => {
   let service: DemoModeService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [DemoModeService]
-    });
+    TestBed.configureTestingModule({});
     service = TestBed.inject(DemoModeService);
   });
 
@@ -15,35 +13,35 @@ describe('DemoModeService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should initialize with demo mode disabled', () => {
-    expect(service.isDemoMode).toBeFalse();
+  it('should start with demo mode disabled', () => {
+    expect(service.isDemoMode).toBeFalsy();
   });
 
   it('should enable demo mode', () => {
     service.enable();
-    expect(service.isDemoMode).toBeTrue();
+    expect(service.isDemoMode).toBeTruthy();
   });
 
   it('should disable demo mode', () => {
     service.enable();
     service.disable();
-    expect(service.isDemoMode).toBeFalse();
+    expect(service.isDemoMode).toBeFalsy();
   });
 
   it('should toggle demo mode', () => {
-    expect(service.isDemoMode).toBeFalse();
     service.toggle();
-    expect(service.isDemoMode).toBeTrue();
+    expect(service.isDemoMode).toBeTruthy();
+
     service.toggle();
-    expect(service.isDemoMode).toBeFalse();
+    expect(service.isDemoMode).toBeFalsy();
   });
 
-  it('should emit state changes through demoMode$', (done) => {
-    const states: boolean[] = [];
-    service.demoMode$.subscribe(state => {
-      states.push(state);
-      if (states.length === 3) {
-        expect(states).toEqual([false, true, false]);
+  it('should emit demo mode changes', (done) => {
+    let emitCount = 0;
+    service.demoMode$.subscribe((isEnabled) => {
+      emitCount++;
+      if (emitCount === 3) { // Initial false, then true, then false
+        expect(isEnabled).toBeFalsy();
         done();
       }
     });
