@@ -26,7 +26,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbContextMenuModule,
     NbActionsModule
   ],
-  selector: 'angular-bits-root',
+  selector: 'app-angular-bits-root',
   template: `
     <nb-layout>
       <nb-layout-header fixed>

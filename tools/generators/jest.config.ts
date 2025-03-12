@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'generators',
   preset: '../../jest.preset.js',
