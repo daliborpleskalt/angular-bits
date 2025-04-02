@@ -1,0 +1,159 @@
+<div class="home">
+  <h1 class="home__title">Angular Bits</h1>
+  <p class="home__subtitle">Educational topics and patterns with Nebular UI</p>
+
+  <div class="home__features">
+    <lib-ui-card class="home__feature-card" status="primary">
+      <div cardHeader class="home__feature-header">
+        <lib-ui-icon icon="color-palette-outline"></lib-ui-icon> Design Tokens
+      </div>
+      <div class="home__feature-content">
+        <p>Maintain SCSS variables in version-controlled JSON files</p>
+        <lib-ui-list [hasHover]="true">
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Centralized design system</span>
+          </lib-ui-list-item>
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Automatic SCSS generation</span>
+          </lib-ui-list-item>
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Nebular theme integration</span>
+          </lib-ui-list-item>
+        </lib-ui-list>
+      </div>
+      <div cardFooter>
+        <lib-ui-button status="primary" routerLink="/ux/design-tokens">
+          Learn More
+        </lib-ui-button>
+      </div>
+    </lib-ui-card>
+
+    <lib-ui-card class="home__feature-card" status="info">
+      <div cardHeader class="home__feature-header">
+        <lib-ui-icon icon="book-outline"></lib-ui-icon> Component Documentation
+      </div>
+      <div class="home__feature-content">
+        <p>Storybook integration for 100% component coverage</p>
+        <lib-ui-list [hasHover]="true">
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Interactive examples</span>
+          </lib-ui-list-item>
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Accessibility checks</span>
+          </lib-ui-list-item>
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Responsive testing</span>
+          </lib-ui-list-item>
+        </lib-ui-list>
+      </div>
+      <div cardFooter>
+        <lib-ui-button status="info" routerLink="/component/button">
+          View Components
+        </lib-ui-button>
+      </div>
+    </lib-ui-card>
+
+    <lib-ui-card class="home__feature-card" status="success">
+      <div cardHeader class="home__feature-header">
+        <lib-ui-icon icon="flash-outline"></lib-ui-icon> Performance Budgeting
+      </div>
+      <div class="home__feature-content">
+        <p>Enforce 150KB CSS/JS limits per route</p>
+        <lib-ui-list [hasHover]="true">
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Automated bundle analysis</span>
+          </lib-ui-list-item>
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Size warnings and errors</span>
+          </lib-ui-list-item>
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">CI/CD integration</span>
+          </lib-ui-list-item>
+        </lib-ui-list>
+      </div>
+      <div cardFooter>
+        <lib-ui-button status="success" routerLink="/ux/performance">
+          Check Performance
+        </lib-ui-button>
+      </div>
+    </lib-ui-card>
+
+    <lib-ui-card class="home__feature-card" status="warning">
+      <div cardHeader class="home__feature-header">
+        <lib-ui-icon icon="checkmark-circle-outline"></lib-ui-icon> Accessibility
+      </div>
+      <div class="home__feature-content">
+        <p>Monthly WCAG 2.1 AA compliance checks</p>
+        <lib-ui-list [hasHover]="true">
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Automated audits</span>
+          </lib-ui-list-item>
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Detailed reports</span>
+          </lib-ui-list-item>
+          <lib-ui-list-item>
+            <lib-ui-icon icon="checkmark-outline"></lib-ui-icon>
+            <span class="home__feature-list-text">Remediation tracking</span>
+          </lib-ui-list-item>
+        </lib-ui-list>
+      </div>
+      <div cardFooter>
+        <lib-ui-button status="warning" routerLink="/ux/accessibility">
+          View Accessibility
+        </lib-ui-button>
+      </div>
+    </lib-ui-card>
+  </div>
+
+  <lib-ui-tabs class="home__topics">
+    <lib-ui-tabs title="Components">
+      <lib-ui-list [hasDivider]="true" [hasHover]="true">
+        <lib-ui-list-item>
+          <a routerLink="/component/content-projection" class="home__topic-link">
+            <lib-ui-icon icon="file-text-outline"></lib-ui-icon>
+            <span class="home__topic-text">Content Projection</span>
+          </a>
+        </lib-ui-list-item>
+        <lib-ui-list-item>
+          <a routerLink="/component/button" class="home__topic-link">
+            <lib-ui-icon icon="square-outline"></lib-ui-icon>
+            <span class="home__topic-text">Button</span>
+          </a>
+        </lib-ui-list-item>
+      </lib-ui-list>
+    </lib-ui-tabs>
+    <lib-ui-tabs title="UX Framework">
+      <lib-ui-list [hasDivider]="true" [hasHover]="true">
+        <lib-ui-list-item>
+          <a routerLink="/ux/design-tokens" class="home__topic-link">
+            <lib-ui-icon icon="color-palette-outline"></lib-ui-icon>
+            <span class="home__topic-text">Design Tokens</span>
+          </a>
+        </lib-ui-list-item>
+        <lib-ui-list-item>
+          <a routerLink="/ux/accessibility" class="home__topic-link">
+            <lib-ui-icon icon="checkmark-circle-outline"></lib-ui-icon>
+            <span class="home__topic-text">Accessibility</span>
+          </a>
+        </lib-ui-list-item>
+        <lib-ui-list-item>
+          <a routerLink="/ux/performance" class="home__topic-link">
+            <lib-ui-icon icon="flash-outline"></lib-ui-icon>
+            <span class="home__topic-text">Performance</span>
+          </a>
+        </lib-ui-list-item>
+      </lib-ui-list>
+    </lib-ui-tabs>
+  </lib-ui-tabs>
+</div>

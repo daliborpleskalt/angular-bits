@@ -1,0 +1,15 @@
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { <%= className %>Component } from '../<%= fileName %>.component';
+
+@Component({
+  selector: 'lib-<%= fileName %>-demo',
+  standalone: true,
+  imports: [CommonModule, <%= className %>Component],
+  templateUrl: './<%= fileName %>-demo.component.html',
+  styleUrls: ['./<%= fileName %>-demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class <%= className %>DemoComponent {
+  // Demo component implementation
+} 

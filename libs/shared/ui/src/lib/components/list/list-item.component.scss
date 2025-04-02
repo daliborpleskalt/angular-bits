@@ -1,0 +1,13 @@
+@use '../../theme/index.scss' as *;
+@use '@nebular/theme/styles/theming' as *;
+@use '../../../../../design-tokens/src/_tokens.scss' as tokens;
+
+.lib-ui-list-item {
+
+  lib-ui-icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: tokens.color('text', 'hint');
+  }
+}

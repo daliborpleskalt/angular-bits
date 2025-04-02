@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "outDir": ""
+  },
+  "files": [
+    "../node_modules/@types/node/index.d.ts"
+  ],
+  "exclude": [
+    "../**/*.spec.ts",
+    "../**/*.test.ts"
+  ],
+  "include": [
+    "../libs/**/*",
+    "*.js"
+  ]
+} 

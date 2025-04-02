@@ -1,0 +1,27 @@
+<nb-card
+  [status]="status"
+  [size]="size"
+  class="lib-ui-card"
+  [class.lib-ui-card--primary]="status === 'primary'"
+  [class.lib-ui-card--info]="status === 'info'"
+  [class.lib-ui-card--success]="status === 'success'"
+  [class.lib-ui-card--warning]="status === 'warning'"
+  [class.lib-ui-card--danger]="status === 'danger'"
+  [class.lib-ui-card--tiny]="size === 'tiny'"
+  [class.lib-ui-card--small]="size === 'small'"
+  [class.lib-ui-card--large]="size === 'large'"
+  [class.lib-ui-card--giant]="size === 'giant'"
+  [class.lib-ui-card--accented]="hasAccent"
+>
+  <nb-card-header class="lib-ui-card__header">
+    <ng-content select="[cardHeader]"></ng-content>
+  </nb-card-header>
+  
+  <nb-card-body class="lib-ui-card__body">
+    <ng-content></ng-content>
+  </nb-card-body>
+  
+  <nb-card-footer class="lib-ui-card__footer">
+    <ng-content select="[cardFooter]"></ng-content>
+  </nb-card-footer>
+</nb-card> 

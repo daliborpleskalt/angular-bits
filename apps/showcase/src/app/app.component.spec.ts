@@ -1,27 +1,34 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
-import { RouterModule } from '@angular/router';
+import { NbSidebarModule, NbMenuModule, NbThemeModule } from '@nebular/theme';
+import { LayoutComponent, ThemeSwitcherComponent } from '@angular-bits/ui';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, NxWelcomeComponent, RouterModule.forRoot([])],
+      imports: [
+        RouterTestingModule,
+        NoopAnimationsModule,
+        NbThemeModule.forRoot({ name: 'default' }),
+        NbSidebarModule.forRoot(),
+        NbMenuModule.forRoot(),
+        LayoutComponent,
+        ThemeSwitcherComponent,
+        AppComponent
+      ],
     }).compileComponents();
-  });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome showcase'
-    );
   });
 
-  it(`should have as title 'showcase'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('showcase');
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

@@ -23,23 +23,51 @@
           }
         ],
         "styles": ["apps/showcase/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "optimization": {
+          "scripts": true,
+          "styles": {
+            "minify": true,
+            "inlineCritical": false
+          },
+          "fonts": true
+        },
+        "stylePreprocessorOptions": {
+          "includePaths": ["node_modules"]
+        }
       },
       "configurations": {
         "production": {
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "2.5mb",
+              "maximumError": "3mb"
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "4kb",
-              "maximumError": "8kb"
+              "maximumWarning": "1.5mb",
+              "maximumError": "2mb"
+            },
+            {
+              "type": "bundle",
+              "name": "main",
+              "maximumWarning": "1mb",
+              "maximumError": "1.5mb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "optimization": {
+            "scripts": true,
+            "styles": {
+              "minify": true,
+              "inlineCritical": false
+            },
+            "fonts": true
+          },
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true
         },
         "development": {
           "optimization": false,

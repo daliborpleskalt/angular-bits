@@ -1,2 +1,18 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<lib-ui-layout>
+  <ng-container header>
+    <h1 class="app-root__title">Angular Bits</h1>
+    <lib-ui-theme-switcher />
+  </ng-container>
+  
+  <ng-container sidebar>
+    <nav class="app-root__nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/component/content-projection" routerLinkActive="active">Content Projection</a>
+      <a routerLink="/ux/design-tokens" routerLinkActive="active">Design Tokens</a>
+      <a routerLink="/ux/accessibility" routerLinkActive="active">Accessibility</a>
+      <a routerLink="/ux/performance" routerLinkActive="active">Performance</a>
+    </nav>
+  </ng-container>
+  
+  <router-outlet></router-outlet>
+</lib-ui-layout> 

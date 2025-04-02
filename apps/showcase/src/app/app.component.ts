@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { LayoutComponent, ThemeSwitcherComponent } from '@angular-bits/ui';
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'app-root',
+  selector: 'app-angular-bits-root',
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, LayoutComponent, ThemeSwitcherComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'showcase';

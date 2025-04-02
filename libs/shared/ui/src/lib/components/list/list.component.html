@@ -1,0 +1,18 @@
+<div class="lib-ui-list">
+  <nb-list 
+    class="lib-ui-list__container"
+    [class.lib-ui-list__container--with-divider]="hasDivider"
+    [class.lib-ui-list__container--with-hover]="hasHover"
+  >
+    <nb-list-item 
+      *ngFor="let item of listItems"
+        class="lib-ui-list-item__content"
+        [class.lib-ui-list-item__content--disabled]="item.disabled"
+        [class.lib-ui-list-item__content--active]="item.active"
+      >
+        <div class="lib-ui-list-item__inner">
+          <ng-container *ngTemplateOutlet="item.contentTpl"></ng-container>
+        </div>
+      </nb-list-item>
+  </nb-list>
+</div>

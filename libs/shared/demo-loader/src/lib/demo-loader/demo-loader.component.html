@@ -1,0 +1,11 @@
+<div class="demo-loader">
+  <div *ngIf="loading" class="demo-loader__loading">
+    Loading topic...
+  </div>
+  <div *ngIf="error" class="demo-loader__error">
+    {{ error }}
+  </div>
+  <div *ngIf="!loading && !error" class="demo-loader__content">
+    <ng-container *ngComponentOutlet="component"></ng-container>
+  </div>
+</div>
