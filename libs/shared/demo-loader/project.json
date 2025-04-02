@@ -2,7 +2,7 @@
   "name": "demo-loader",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/demo-loader/src",
-  "prefix": "lib",
+  "prefix": "lib-demo-loader",
   "projectType": "library",
   "tags": [],
   "targets": {

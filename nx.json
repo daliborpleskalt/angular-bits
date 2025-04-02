@@ -1,8 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "affected": {
-    "defaultBase": "main"
-  },
+  "defaultBase": "main",
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",

@@ -29,12 +29,12 @@
           },
           {
             "input": "tools/generators/src",
-            "glob": "**/files/**",
+            "glob": "**/files/**/*.{ts,html,scss}",
             "output": "./src"
           },
           {
             "input": "tools/generators/src",
-            "glob": "**/demo-files/**",
+            "glob": "**/demo-files/**/*.{ts,html,scss}",
             "output": "./src"
           }
         ]

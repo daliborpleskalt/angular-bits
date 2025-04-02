@@ -6,36 +6,8 @@ import { CommonModule } from '@angular/common';
   selector: 'lib-demo-loader',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div class="demo-loader">
-      <div *ngIf="loading" class="demo-loader__loading">
-        Loading topic...
-      </div>
-      <div *ngIf="error" class="demo-loader__error">
-        {{ error }}
-      </div>
-      <div *ngIf="!loading && !error" class="demo-loader__content">
-        <ng-container *ngComponentOutlet="component"></ng-container>
-      </div>
-    </div>
-  `,
-  styles: [`
-    .demo-loader {
-      &__loading {
-        padding: 1rem;
-        text-align: center;
-      }
-      
-      &__error {
-        padding: 1rem;
-        color: red;
-      }
-      
-      &__content {
-        padding: 1rem;
-      }
-    }
-  `]
+  templateUrl: './demo-loader.component.html',
+  styleUrls: ['./demo-loader.component.scss']
 })
 export class DemoLoaderComponent implements OnInit {
   loading = true;

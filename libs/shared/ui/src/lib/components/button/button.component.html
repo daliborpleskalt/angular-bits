@@ -1,0 +1,16 @@
+<button
+  nbButton
+  [status]="status"
+  [size]="size"
+  [appearance]="appearance"
+  [disabled]="disabled"
+  class="lib-ui-button"
+  [class.lib-ui-button--disabled]="disabled"
+  [class.lib-ui-button--{{status}}]="status"
+  [class.lib-ui-button--{{size}}]="size"
+  [class.lib-ui-button--{{appearance}}]="appearance"
+>
+  <span class="lib-ui-button__content">
+    <ng-content></ng-content>
+  </span>
+</button> 

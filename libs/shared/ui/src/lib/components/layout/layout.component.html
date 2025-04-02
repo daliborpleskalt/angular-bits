@@ -1,0 +1,17 @@
+<nb-layout [withScroll]="withScroll">
+  <nb-layout-header fixed>
+    <ng-content select="[header]"></ng-content>
+  </nb-layout-header>
+
+  <nb-sidebar>
+    <ng-content select="[sidebar]"></ng-content>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <ng-content></ng-content>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <ng-content select="[footer]"></ng-content>
+  </nb-layout-footer>
+</nb-layout> 

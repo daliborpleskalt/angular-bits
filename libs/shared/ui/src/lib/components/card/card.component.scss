@@ -1,0 +1,104 @@
+@use '../../theme/index.scss' as *;
+@use '@nebular/theme/styles/theming' as *;
+@use '../../../../../design-tokens/src/_tokens.scss' as tokens;
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.lib-ui-card {
+  height: 100%;
+  transition: all tokens.$animation-duration-normal tokens.$animation-timing-easeInOut;
+  font-family: tokens.$font-family-primary;
+
+
+  .lib-ui-card__header {
+    padding: tokens.spacing('lg');
+    font-size: tokens.$font-size-lg;
+    font-weight: tokens.$font-weight-bold;
+    color: tokens.color('text', 'primary');
+    border-bottom: 1px solid tokens.color('basic', '400');
+    background-color: transparent;
+  }
+
+  .lib-ui-card__body {
+    padding: tokens.spacing('lg');
+    font-size: tokens.$font-size-md;
+    line-height: tokens.$font-lineHeight-md;
+  }
+
+  .lib-ui-card__footer {
+    padding: tokens.spacing('lg');
+    border-top: 1px solid tokens.color('basic', '400');
+    background-color: transparent;
+  }
+
+  // Status modifiers
+  &--primary {
+    border-top: 4px solid tokens.color('primary');
+  }
+
+  &--info {
+    border-top: 4px solid tokens.color('info');
+  }
+
+  &--success {
+    border-top: 4px solid tokens.color('success');
+  }
+
+  &--warning {
+    border-top: 4px solid tokens.color('warning');
+  }
+
+  &--danger {
+    border-top: 4px solid tokens.color('danger');
+  }
+
+  // Size modifiers
+  &--tiny {
+
+    .lib-ui-card__header,
+    .lib-ui-card__body,
+    .lib-ui-card__footer {
+      padding: tokens.spacing('xs');
+    }
+  }
+
+  &--small {
+
+    .lib-ui-card__header,
+    .lib-ui-card__body,
+    .lib-ui-card__footer {
+      padding: tokens.spacing('sm');
+    }
+  }
+
+  &--large {
+
+    .lib-ui-card__header,
+    .lib-ui-card__body,
+    .lib-ui-card__footer {
+      padding: tokens.spacing('xl');
+    }
+  }
+
+  &--giant {
+
+    .lib-ui-card__header,
+    .lib-ui-card__body,
+    .lib-ui-card__footer {
+      padding: tokens.spacing('xxl');
+    }
+  }
+
+  // Accent modifier
+  &--accented {
+    box-shadow: tokens.$shadow-md;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: tokens.$shadow-lg;
+    }
+  }
+}

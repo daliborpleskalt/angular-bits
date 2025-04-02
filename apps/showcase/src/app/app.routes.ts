@@ -7,11 +7,6 @@ export const appRoutes: Route[] = [
       import('./home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'component/button',
-    loadComponent: () =>
-      import('./component/button/button.component').then((m) => m.ButtonShowcaseComponent),
-  },
-  {
     path: ':type/:topic',
     loadComponent: () =>
       import('@angular-bits/demo-loader').then((m) => m.DemoLoaderComponent),

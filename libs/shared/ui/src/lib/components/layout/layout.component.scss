@@ -1,0 +1,23 @@
+.lib-ui-layout {
+  display: block;
+  min-height: 100vh;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  &__sidebar {
+    padding: 1rem;
+  }
+
+  &__content {
+    padding: 1rem;
+  }
+
+  &__footer {
+    padding: 1rem;
+    text-align: center;
+  }
+} 

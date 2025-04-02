@@ -1,0 +1,66 @@
+@use '../../theme/index.scss' as *;
+@use '@nebular/theme/styles/theming' as *;
+@use '../../../../../design-tokens/src/_tokens.scss' as tokens;
+
+.lib-ui-button {
+  font-family: tokens.$font-family-primary;
+  transition: all tokens.$animation-duration-normal tokens.$animation-timing-easeInOut;
+
+  &__content {
+    display: inline-flex;
+    align-items: center;
+    gap: tokens.spacing('xs');
+  }
+
+  // Status modifiers
+  &--primary {
+    font-weight: tokens.$font-weight-bold;
+  }
+
+  &--success {
+    text-transform: uppercase;
+  }
+
+  &--warning {
+    font-weight: tokens.$font-weight-bold;
+  }
+
+  &--danger {
+    text-transform: uppercase;
+    font-weight: tokens.$font-weight-bold;
+  }
+
+  // Size modifiers
+  &--tiny {
+    font-size: tokens.$font-size-xs;
+  }
+
+  &--small {
+    font-size: tokens.$font-size-sm;
+  }
+
+  &--medium {
+    font-size: tokens.$font-size-md;
+  }
+
+  &--large {
+    font-size: tokens.$font-size-lg;
+  }
+
+  &--giant {
+    font-size: tokens.$font-size-xl;
+  }
+
+  // Appearance modifiers
+  &--ghost {
+    &:hover {
+      background-color: rgba(tokens.color('primary'), 0.1);
+    }
+  }
+
+  // State modifiers
+  &--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

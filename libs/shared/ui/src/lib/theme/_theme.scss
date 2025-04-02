@@ -1,6 +1,7 @@
+@forward '@nebular/theme/styles/theming';
 @use '../../../../../shared/design-tokens/src/_tokens' as tokens;
 @use '@nebular/theme/styles/theming' as *;
-@use '@nebular/theme/styles/themes/default' as default;
+@use '@nebular/theme/styles/themes' as *;
 
 // Create a custom theme using our design tokens
 $nb-themes: nb-register-theme((
@@ -138,4 +139,4 @@ $nb-themes: nb-register-theme((
   // Animations
   animation-duration: tokens.$animation-duration-normal,
   animation-easing: tokens.$animation-timing-easeInOut,
-), angular-bits, default); 
+), angular-bits, default);

@@ -1,0 +1,6 @@
+<div class="<%= fileName %>-demo">
+  <h2 class="<%= fileName %>-demo__title">Demo: <%= className %></h2>
+  <div class="<%= fileName %>-demo__content">
+    <lib-<%= fileName %>></lib-<%= fileName %>>
+  </div>
+</div> 

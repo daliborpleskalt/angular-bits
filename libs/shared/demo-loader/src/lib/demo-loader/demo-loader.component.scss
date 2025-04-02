@@ -9,24 +9,16 @@
   }
 
   &__loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
-    color: #6b7280;
+    padding: 1rem;
+    text-align: center;
   }
 
   &__error {
-    color: #dc2626;
     padding: 1rem;
-    border-radius: 0.25rem;
-    background-color: #fee2e2;
-    margin-bottom: 1rem;
+    color: red;
   }
 
   &__content {
-    // Styles for the demo content container
-    position: relative;
-    min-height: 200px;
+    padding: 1rem;
   }
 } 

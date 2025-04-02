@@ -1,3 +1,3 @@
-export * from './lib/ui/ui.component';
-export * from './lib/button/button.component';
-export * from './lib/theme/theme.module';
+export * from './lib/components';
+export * from './lib/services/theme.service';
+export * from './lib/providers/nebular-providers';

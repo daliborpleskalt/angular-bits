@@ -1,0 +1,31 @@
+@use '@nebular/theme/styles/theming' as *;
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.lib-ui-list {
+  &__container {
+    width: 100%;
+    border-radius: nb-theme(border-radius);
+    background-color: nb-theme(background-basic-color-1);
+
+    nb-list-item {
+      border-bottom: none;
+    }
+
+    &--with-divider {
+      nb-list-item:not(:last-child) {
+        border-bottom: 1px solid nb-theme(divider-color);
+      }
+    }
+
+    &--with-hover {
+      nb-list-item:hover {
+        background-color: nb-theme(background-basic-hover-color-1);
+        cursor: pointer;
+      }
+    }
+  }
+}

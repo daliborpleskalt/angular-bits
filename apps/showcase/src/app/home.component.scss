@@ -1,26 +1,115 @@
+@use '../../../../libs/shared/ui/src/lib/theme/index.scss' as *;
+@use '../../../../libs/shared/design-tokens/src/_tokens.scss' as tokens;
+
 .home {
   display: block;
   min-height: 100vh;
   padding: 1rem;
   max-width: 80rem;
   margin: 0 auto;
+  text-align: center;
 
   &__header {
     margin-bottom: 2rem;
   }
 
   &__title {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
+    font-size: tokens.$font-size-xxl;
+    margin-bottom: tokens.spacing('md');
+    font-family: tokens.$font-family-primary;
+    color: tokens.color('text', 'primary');
   }
 
   &__subtitle {
-    color: #6b7280;
+    font-size: tokens.$font-size-lg;
+    color: tokens.color('text', 'secondary');
+    margin-bottom: tokens.spacing('xl');
   }
 
   &__main {
     position: relative;
     min-height: 400px;
   }
-} 
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: tokens.spacing('lg');
+    margin-bottom: tokens.spacing('xl');
+  }
+
+  &__feature-card {
+    height: 100%;
+    transition: transform tokens.$animation-duration-normal tokens.$animation-timing-easeInOut;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+
+  &__feature-header {
+    display: flex;
+    align-items: center;
+    font-size: tokens.$font-size-lg;
+    font-weight: tokens.$font-weight-bold;
+
+    lib-ui-icon {
+      margin-right: tokens.spacing('sm');
+      color: tokens.color('primary');
+    }
+  }
+
+  &__feature-content {
+    text-align: left;
+    padding: tokens.spacing('md');
+
+    p {
+      margin-bottom: tokens.spacing('md');
+    }
+
+    lib-ui-list {
+      display: block;
+      width: 100%;
+      margin-top: tokens.spacing('md');
+    }
+  }
+
+  &__topics {
+    margin-top: tokens.spacing('xl');
+
+    a {
+      text-decoration: none;
+      color: tokens.color('text', 'primary');
+      display: block;
+      padding: tokens.spacing('sm');
+      transition: background-color tokens.$animation-duration-normal tokens.$animation-timing-easeInOut;
+      border-radius: tokens.$radius-sm;
+
+      &:hover {
+        background-color: tokens.color('basic', '100');
+        color: tokens.color('primary');
+      }
+    }
+  }
+
+  &__feature-list-text {
+    margin-left: tokens.spacing('sm');
+    display: inline-block;
+  }
+
+  &__topic-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: tokens.color('text', 'primary');
+    transition: color tokens.$animation-duration-normal tokens.$animation-timing-easeInOut;
+
+    &:hover {
+      color: tokens.color('primary');
+    }
+  }
+
+  &__topic-text {
+    margin-left: tokens.spacing('sm');
+  }
+}

@@ -1,5 +1,5 @@
 // ANGULAR EDUCATIONAL MONOREPO CURSOR RULES
-// Last updated: 2025-03-10
+// Last updated: 2024-03-10
 // Applies to: All files in monorepo
 
 ### CORE PRINCIPLES ###
@@ -13,14 +13,191 @@
 8. Follow BEM methodology strictly
 9. Use Nebular UI components exclusively
 
+### COMPONENT FILE STRUCTURE ###
+# File Organization
+- Every component MUST have separate files for:
+  * Component class (.ts)
+  * Template (.html)
+  * Styles (.scss)
+- NO inline templates allowed
+- NO inline styles allowed
+- Follow Angular style guide naming conventions
+
+# File Naming
+- Use kebab-case for filenames
+- Use the following suffixes:
+  * .component.ts
+  * .component.html
+  * .component.scss
+  * .component.spec.ts
+
+### STYLING RULES ###
+# SCSS Usage
+- Use SCSS for all stylesheets
+- Follow BEM methodology strictly:
+  * Block: Component name
+  * Element: Block__element
+  * Modifier: Block__element--modifier
+- Maximum nesting depth: 3 levels
+- Use Nebular theme variables
+- Keep styles scoped to component
+
+### COMPONENT RULES ###
+# Metadata
+- Use standalone: true
+- Use changeDetection: ChangeDetectionStrategy.OnPush
+- Use templateUrl and styleUrls
+- Follow selector prefix rules:
+  * Libraries: prefix with 'lib-{library-name}-' (e.g., 'lib-ui-button' for shared/ui)
+  * Applications: prefix with 'app-' (e.g., 'app-home')
+  * Examples: prefix with 'lib-' (e.g., 'lib-content-projection')
+- Include @Example metadata header
+
+# Selector Prefix Rules
+- Shared UI Library: 'lib-ui-'
+- Core Library: 'lib-core-'
+- Feature Libraries: 'lib-{feature}-'
+- Demo Components: 'lib-{topic}-demo'
+- Application Components: 'app-'
+- Never use bare 'lib-' prefix without library identifier
+- Keep prefix consistent within library boundaries
+
+# Examples:
+- shared/ui: 'lib-ui-button', 'lib-ui-card'
+- shared/core: 'lib-core-logger', 'lib-core-config'
+- topics: 'lib-content-projection', 'lib-content-projection-demo'
+- showcase app: 'app-home', 'app-sidebar'
+
+# Template Rules
+- Use semantic HTML elements
+- Follow accessibility guidelines
+- Use Nebular components
+- Keep templates focused and simple
+
+### TESTING STANDARDS ###
+# File Structure
+- Every component must have a .spec.ts file
+- Keep test files adjacent to component files
+- Follow AAA pattern in tests
+- Use Angular Testing Library
+
+### DOCUMENTATION ###
+# Component Documentation
+- Include JSDoc comments for:
+  * Component description
+  * Input/Output properties
+  * Public methods
+- Link examples in markdown
+- Document Nebular usage
+
+### MAINTENANCE ###
+# Version Control
+- Keep files small and focused
+- Document breaking changes
+- Follow semantic versioning
+- Update documentation with code
+
+### AUTOMATION ###
+# Generators
+- Use nx generators for new components
+- Follow established patterns
+- Generate all required files
+- Include test files by default
+
 ### DEPENDENCY MANAGEMENT ###
-1. NEVER use --legacy-peer-deps flag
-2. Resolve dependency conflicts properly
-3. Keep dependencies at compatible versions
-4. Document breaking changes in dependencies
-5. Use exact versions for critical dependencies
-6. Maintain peerDependencies in sync
-7. Use @nebular/* packages for UI components
+# Nebular Integration
+- NO direct Nebular imports in applications
+- ALL Nebular components MUST be wrapped in UI library
+- UI library is the single source of truth for design system
+- Applications MUST import ONLY from UI library
+- Maintain single instance of Nebular theme
+- Document all wrapped components
+
+# Library Structure
+- shared/ui:
+  * Wraps all Nebular components
+  * Provides consistent theming
+  * Centralizes design tokens
+  * Handles component customization
+  * Manages Nebular dependencies
+
+# Import Rules
+1. Applications:
+   * MUST import from @angular-bits/ui
+   * CANNOT import from @nebular/*
+   * MUST use lib-ui-* components
+2. UI Library:
+   * CAN import from @nebular/*
+   * MUST wrap all Nebular components
+   * MUST maintain API compatibility
+3. Feature Libraries:
+   * MUST import from @angular-bits/ui
+   * CANNOT import from @nebular/*
+   * MUST use lib-ui-* components
+
+### BUNDLE SIZE OPTIMIZATION ###
+# Size Budgets
+- Production bundle size limits:
+  * Initial bundle: maximum 1MB
+  * Lazy-loaded modules: maximum 500KB each
+  * Individual components: maximum 100KB each
+  * Total budget: maximum 2MB
+  * Shared chunks: maximum 300KB each
+  * Dynamic imports: maximum 200KB each
+
+# Bundle Analysis
+- Run source-map-explorer after each build
+- Track bundle size changes in CI
+- Document size impact in PRs
+- Monitor chunk splitting
+- Analyze dependency tree
+
+# Optimization Strategies
+1. Code Splitting:
+   * Lazy load all feature modules
+   * Use dynamic imports for heavy components
+   * Implement route-level code splitting
+   * Configure custom chunk splitting
+   * Optimize common chunk strategy
+
+2. Performance Optimization:
+   * Use virtual scrolling for large lists
+   * Implement infinite scroll
+   * Lazy load images and assets
+   * Use WebP image format
+   * Enable resource hints
+   * Implement service worker caching
+
+3. Dependency Management:
+   * Regular dependency audits
+   * Remove unused dependencies
+   * Use lightweight alternatives
+   * Track transitive dependencies
+   * Monitor duplicate packages
+
+4. Build Optimization:
+   * Enable build optimizer
+   * Use production mode
+   * Enable AOT compilation
+   * Implement differential loading
+   * Optimize CSS delivery
+   * Minify and compress assets
+
+5. Runtime Optimization:
+   * Use OnPush change detection
+   * Implement pure pipes
+   * Optimize template expressions
+   * Use trackBy functions
+   * Implement memoization
+   * Cache expensive computations
+
+# Monitoring and Analysis
+- Implement bundle analysis in CI/CD:
+  * Track bundle sizes over time
+  * Set size budgets per chunk
+  * Monitor tree-shaking effectiveness
+  * Analyze unused exports
+  * Track duplicate modules
 
 ### ARCHITECTURAL RULES ###
 # Module Boundaries
@@ -34,6 +211,13 @@
 - Shared utilities must reside in libs/shared/core
 - Max 15 dependencies per example
 - Bundle size <100KB per demo component
+
+# Bundle Size Management
+- Track bundle sizes in CI/CD pipeline
+- Set up size budgets in angular.json
+- Regular bundle analysis with source-map-explorer
+- Document size impact of new features
+- Monitor lazy-loaded chunk sizes
 
 ### CODING CONVENTIONS ###
 // Components
