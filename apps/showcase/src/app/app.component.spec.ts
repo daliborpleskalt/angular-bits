@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { NbSidebarModule, NbMenuModule, NbThemeModule } from '@nebular/theme';
+import { LayoutComponent, ThemeSwitcherComponent } from '@angular-bits/ui';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -16,6 +17,8 @@ describe('AppComponent', () => {
         NbThemeModule.forRoot({ name: 'default' }),
         NbSidebarModule.forRoot(),
         NbMenuModule.forRoot(),
+        LayoutComponent,
+        ThemeSwitcherComponent,
         AppComponent
       ],
     }).compileComponents();
